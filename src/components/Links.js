@@ -22,69 +22,47 @@ class Links extends Component {
   
         <Router>
         <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-  
-              <li>
-                <Link to="/profiles">Profiles</Link>
-              </li>
-  
-              <li>
-                <Link to="/galleries">Galleries</Link>
-              </li>
-  
-              <li>
-                <Link to="/events">Upcoming Events</Link>
-              </li>
-
-              <li>
-                <Link to="/merchandise">Merchandise</Link>
-              </li>
-
-              <li>
-                <Link to="/contact">Contact US</Link>
-              </li>
-
-            </ul>
-          </nav>
-  
-          {/* A <Switch> looks through its children <Route>s and
-              renders the first one that matches the current URL. */}
-          <Switch>
-
-            <Route path="/">
-              <Home />
-            </Route>
-
-            <Route path="/merchandise">
-              <Merchandise />
-            </Route>
-  
-            <Route path="/profiles">
-              <Profiles />
-            </Route>
-  
-            <Route path="/galleries">
-              <Galleries />
-            </Route>
-  
-            <Route path="/events">
-              <Events />
-            </Route>
-
-            <Route path="/contact">
-              <Contact />
-            </Route>
-
-           
-          </Switch>
+        <div class="ui teal inverted six item menu">
+              <a class="active item"> <Link to="/">Home</Link></a>
+              <a class="item"><Link to="/profiles">Profiles</Link></a>
+              <a class="item"><Link to="/galleries">Galleries</Link></a>
+              <a class="item"><Link to="/events">Events</Link></a>
+              <a class="item"><Link to="/merchandise">Merchandise</Link></a>
+              <a class="item"><Link to="/contact">Contact US</Link></a>
         </div>
-      </Router>
-  
+        
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/contact">
+            <Contact />
+          </Route>
 
+          <Route path="/profiles">
+            <Profiles />
+          </Route>
+
+          <Route path="/galleries">
+            <Galleries />
+          </Route>
+
+
+          <Route path="/events">
+            <Events />
+          </Route>
+
+
+          <Route path="/merchandise">
+            <Merchandise />
+          </Route>
+
+
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
       );
     }
   }
